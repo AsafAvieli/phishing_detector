@@ -6,7 +6,8 @@ Project Link: https://github.com/AsafAvieli/phishing_detector
 A full-stack security tool that analyzes emails for phishing indicators. It integrates a custom-built FastAPI backend with a Gmail Contextual Add-on, providing two ways to scan emails:
 
 * **Live Gmail Integration**: Real-time analysis of open emails directly from a side panel.
-* **Manual Analysis Dashboard**: A web interface (Streamlit) for uploading and inspecting .eml files.
+* **Manual Analysis Dashboard**: A web interface (Streamlit) for uploading and inspecting
+.eml files.
 
 ## Tech Stack
 * **Backend**: Python (FastAPI) – Chosen for its speed, simple REST API design, and native async support, which keeps analysis responses fast even under load.
@@ -16,12 +17,12 @@ A full-stack security tool that analyzes emails for phishing indicators. It inte
 
 ## Detection Capabilities
 The engine scans each email across multiple dimensions:
-* **Suspicious Links**: Detects URLs using raw IP addresses or high-risk domains (e.g., .xyz, .top, .click).
+* **Suspicious Links**: Detects URLs using raw IP addresses or high-risk domains.
 * **Display Name Spoofing**: Flags when a sender's display name impersonates a known brand (e.g., "Microsoft Security Team") but the actual email domain doesn't match.
 * **Typosquatting**: Catches sender domains that closely resemble legitimate ones (e.g., paypa1.com vs paypal.com) using fuzzy string matching.
 * **Urgent Language**: Scans for pressure tactics and social engineering keywords designed to make the recipient act without thinking.
 * **Header Inspection**: Analyzes inconsistencies between From, Reply-To, and Return-Path headers to detect spoofing.
-* **Authentication Failures**: Checks SPF, DKIM, and DMARC results to verify whether the sender is who they claim to be.
+* **Authentication Failures**: Checks SPF (is the sending server authorized for this domain?), DKIM (was the email signed and unmodified?), and DMARC (do SPF/DKIM align with the From domain?) to verify whether the sender is who they claim to be.
 * **Malicious Attachments**: Flags double-extension filenames (e.g., invoice.pdf.exe) used to disguise executables.
 
 ---
