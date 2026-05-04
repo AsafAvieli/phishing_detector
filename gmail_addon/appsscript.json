@@ -1,0 +1,32 @@
+{
+  "timeZone": "America/New_York",
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/gmail.addons.execute",
+    "https://www.googleapis.com/auth/gmail.addons.current.message.readonly"
+  ],
+  "urlFetchWhitelist": [
+    "https://saturday-province-confined.ngrok-free.dev/"
+  ],
+  "addOns": {
+    "common": {
+      "name": "Phishing Detector",
+      "logoUrl": "https://www.gstatic.com/images/icons/material/system/2x/security_black_48dp.png",
+      "layoutProperties": {
+        "primaryColor": "#1a73e8"
+      },
+      "homepageTrigger": {
+        "runFunction": "buildHomepageCard"
+      }
+    },
+    "gmail": {
+      "contextualTriggers": [
+        {
+          "unconditional": {},
+          "onTriggerFunction": "buildMessageCard"
+        }
+      ]
+    }
+  }
+}
