@@ -1,6 +1,8 @@
 
 ## Overview
 
+Project Link: https://github.com/AsafAvieli/phishing_detector
+
 This project is a full-stack security solution designed to identify phishing indicators within Gmail. It bridges the gap between static email content and dynamic security analysis by integrating a custom-built FastAPI backend with a Gmail Contextual Add-on.
 
 The system provides two methods of analysis:
